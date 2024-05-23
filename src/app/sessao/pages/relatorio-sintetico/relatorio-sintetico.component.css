@@ -1,16 +1,7 @@
-.relatorio-box {
-  margin-top: 50px;
-  display: block;
+.relatorio-box{
+    margin-top: 50px;
+    display: block;
 }
-.relatorio-box hr {
-  border-color: #f41d97;
-}
-.filter-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-mat-form-field {
-  width: 200px;
+.relatorio-box hr{
+    border-color: #F41D97; 
 }

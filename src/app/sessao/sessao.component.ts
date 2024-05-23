@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {BarraLateralComponent} from './barra-lateral/barra-lateral.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { RouterOutlet } from '@angular/router';
 import { RelatorioAnaliticoComponent } from './pages/relatorio-analitico/relatorio-analitico.component';
 import { RelatorioSinteticoComponent } from './pages/relatorio-sintetico/relatorio-sintetico.component';
@@ -7,10 +7,13 @@ import { RelatorioSinteticoComponent } from './pages/relatorio-sintetico/relator
 @Component({
   selector: 'app-conteudo',
   standalone: true,
-  imports: [BarraLateralComponent, RouterOutlet, RelatorioAnaliticoComponent, RelatorioSinteticoComponent],
+  imports: [
+    BarraLateralComponent,
+    RouterOutlet,
+    RelatorioAnaliticoComponent,
+    RelatorioSinteticoComponent,
+  ],
   templateUrl: './sessao.component.html',
-  styleUrl: './sessao.component.css'
+  styleUrl: './sessao.component.css',
 })
-export class SessaoComponent {
-
-}
+export class SessaoComponent {}
