@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './relatorio.component.html',
-  styleUrl: './relatorio.component.css'
+  styleUrl: './relatorio.component.css',
 })
-export class RelatorioComponent {
-
-}
+export class RelatorioComponent {}

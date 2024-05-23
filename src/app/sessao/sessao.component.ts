@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {BarraLateralComponent} from '../barra-lateral/barra-lateral.component';
-import {RelatorioComponent} from '../relatorio/relatorio.component'
+import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
+import { RelatorioComponent } from '../relatorio/relatorio.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,8 +8,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [BarraLateralComponent, RelatorioComponent, RouterOutlet],
   templateUrl: './sessao.component.html',
-  styleUrl: './sessao.component.css'
+  styleUrl: './sessao.component.css',
 })
-export class SessaoComponent {
-
-}
+export class SessaoComponent {}
