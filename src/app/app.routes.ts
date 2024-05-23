@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { RelatorioComponent } from './relatorio/relatorio.component';
 import { SessaoComponent } from './sessao/sessao.component';
-import {RelatorioSintaticoComponent} from './relatorio-sintatico/relatorio-sintatico.component'
+import {RelatorioSinteticoComponent} from './sessao/pages/relatorio-sintetico/relatorio-sintetico.component'
+import { RelatorioAnaliticoComponent } from './sessao/pages/relatorio-analitico/relatorio-analitico.component';
 
 export const routes: Routes = [
-    {path: '', component: RelatorioComponent},
-    {path: 'Relatorio-sintático', component: RelatorioSintaticoComponent},
+    {path: '', component: RelatorioAnaliticoComponent},
+    {path: 'Relatorio-sintático', component: RelatorioSinteticoComponent},
     {path:'**', redirectTo:''}
 ];

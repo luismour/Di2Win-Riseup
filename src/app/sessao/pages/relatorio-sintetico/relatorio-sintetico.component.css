@@ -1,0 +1,7 @@
+.relatorio-box{
+    margin-top: 50px;
+    display: block;
+}
+.relatorio-box hr{
+    border-color: #F41D97; 
+}
