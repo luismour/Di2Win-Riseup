@@ -1,5 +1,5 @@
 <div class="relatorio-box">
-  <h1>Relatório Analitco</h1>
+  <h1>Relatório Analítico</h1>
   <hr />
 </div>
 
@@ -16,12 +16,18 @@
       [startAt]="dataSource"
     ></mat-datepicker>
   </mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="aplicarFiltro()">
-    Filtrar
-  </button>
-  <button mat-raised-button color="primary" (click)="baixarDados()">
-    Baixar
+  <button
+    mat-stroked-button
+    style="
+      border-color: #f41d97;
+      color: #f41d97;
+      padding: 22px;
+      margin-right: 30%;
+    "
+    (click)="baixarDados()"
+  >
+    Baixar relatório
+    <mat-icon>download</mat-icon>
   </button>
 </div>
 
@@ -44,3 +50,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+<mat-paginator
+  [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  class="mat-elevation-z8"
+></mat-paginator>

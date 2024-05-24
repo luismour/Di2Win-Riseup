@@ -1,19 +1,18 @@
 .relatorio-box {
-    margin-top: 50px;
-    display: block;
-  }
-  .relatorio-box hr {
-    border-color: #f41d97;
-  }
-  .filter-container {
-    display: flex;
-    gap: 5%;
-    margin: 20px 0px 50px 20px;
-    align-items: center;
+  margin-top: 50px;
+  display: block;
+}
+.relatorio-box hr {
+  border-color: #f41d97;
+}
+.filter-container {
+  display: flex;
+  gap: 5%;
+  margin: 20px 0px 50px 20px;
+  align-items: center;
+}
 
-  }
-  
-  mat-form-field {
-    width: 200px;
-  }
-  
+mat-form-field {
+  width: 200px;
+  gap: 1px;
+}

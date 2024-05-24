@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { SelectDocumentoComponent } from '../../../components/select-documento/select-documento.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +11,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 interface DadosDocumento {
   tipoDocumento: string;
@@ -31,6 +34,8 @@ interface DadosDocumento {
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
   ],
   templateUrl: './relatorio-analitico.component.html',
   styleUrls: ['./relatorio-analitico.component.css'],
@@ -42,6 +47,8 @@ export class RelatorioAnaliticoComponent implements OnInit {
   tipoDocumentoSelecionado: string = ''; // Inicialização com valor padrão
   dataSelecionada: Date | null = null; // Inicialização com valor nulo
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   ngOnInit() {
     // Inicialize com dados fictícios ou carregue os dados de uma API
     this.dataSource.data = [
@@ -51,11 +58,21 @@ export class RelatorioAnaliticoComponent implements OnInit {
         quantidadePaginas: 10,
       },
       {
+        tipoDocumento: 'RG',
+        data: new Date('2023-05-21'),
+        quantidadePaginas: 5,
+      },
+      {
         tipoDocumento: 'Fatura',
         data: new Date('2023-05-21'),
         quantidadePaginas: 5,
       },
     ];
+  }
+
+  ngAfterViewInit() {
+    // Conectar o paginator ao dataSource após a visualização ser inicializada
+    this.dataSource.paginator = this.paginator;
   }
 
   aplicarFiltro() {

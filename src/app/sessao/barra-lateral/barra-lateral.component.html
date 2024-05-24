@@ -1,21 +1,22 @@
 <div class="barra-lateral-box">
-    <ul class="menu-box">
-        <li><a >Painel principal</a></li>
-        <li><a >Enviar arquivo</a></li>
-        <li><a >Documentação</a></li>
+  <ul class="menu-box">
+    <li><a>Painel principal</a></li>
+    <li><a>Enviar arquivo</a></li>
+    <li><a>Documentação</a></li>
 
-        <li class="menu-item" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
-            <a [style.color]="textColor" [style.backgroundColor]="backgroundColor">Relatórios</a>
+    <li class="menu-item" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+      <a [style.color]="textColor" [style.backgroundColor]="backgroundColor"
+        >Relatórios</a
+      >
 
-            <div class="dropdown-menu" *ngIf="isMenuVisible">
-                <ul>
-                    <li routerLink="/">Relatório analítico</li>
-                    <li routerLink="/Relatorio-sintático">Relatório sintático</li>
-                </ul>
-            </div>
-
-        </li>
-        <li><a >Perfil</a></li>
-        <li><a >Sair</a></li>
-    </ul>
+      <div class="dropdown-menu" *ngIf="isMenuVisible">
+        <ul>
+          <li routerLink="/">Relatório analítico</li>
+          <li routerLink="/Relatorio-sintático">Relatório sintético</li>
+        </ul>
+      </div>
+    </li>
+    <li><a>Perfil</a></li>
+    <li><a>Sair</a></li>
+  </ul>
 </div>
