@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-barra-lateral',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, MatIconModule],
   templateUrl: './barra-lateral.component.html',
   styleUrl: './barra-lateral.component.css'
 })
@@ -17,7 +19,7 @@ export class BarraLateralComponent {
 
   showMenu() {
     this.isMenuVisible = true;
-    this.changeColor('#F41D97', '#FFDDF2');
+    this.changeColor('#F41D97', 'transparent');
   }
 
   hideMenu() {
