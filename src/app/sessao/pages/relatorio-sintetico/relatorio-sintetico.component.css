@@ -14,5 +14,13 @@
 
 mat-form-field {
   width: 200px;
-  gap: 1px;
 }
+
+
+table.mat-elevation-z8 {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra à tabela */
+  border-radius: 4px; /* Adiciona borda arredondada */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
+  width: 90%;
+}
+

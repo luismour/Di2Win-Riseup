@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {BaixarBotaoAnaliticoComponent} from '../../../components/baixar-botao-analitico/baixar-botao-analitico.component'
+
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectDocumentoComponent } from '../../../components/select-documento/select-documento.component';
+import {SelectDateComponent} from '../../../components/select-date/select-date.component'
+import{TabelaAnaliticoComponent} from '../../../components/tabela-analitico/tabela-analitico.component'
+
 import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -25,6 +30,9 @@ interface DadosDocumento {
   standalone: true,
   imports: [
     SelectDocumentoComponent,
+    TabelaAnaliticoComponent,
+    SelectDateComponent,
+    BaixarBotaoAnaliticoComponent,
     CommonModule,
     FormsModule,
     MatButtonModule,
@@ -106,26 +114,4 @@ export class RelatorioAnaliticoComponent implements OnInit {
     this.dataSource.filter = valorFiltro.trim().toLowerCase();
   }
 
-  baixarDados() {
-    const dadosCSV = this.converterParaCSV(this.dataSource.filteredData);
-    const blob = new Blob([dadosCSV], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'documentos.csv');
-    link.click();
-  }
-
-  converterParaCSV(dados: DadosDocumento[]): string {
-    const cabecalho = ['Tipo de Documento', 'Data', 'Quantidade de Páginas'];
-    const linhas = dados.map((d) => [
-      d.tipoDocumento,
-      d.data.toDateString(),
-      d.quantidadePaginas,
-    ]);
-
-    const conteudoCSV =
-      cabecalho.join(',') + '\n' + linhas.map((e) => e.join(',')).join('\n');
-    return conteudoCSV;
-  }
 }
