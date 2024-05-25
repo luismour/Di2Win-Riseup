@@ -9,8 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 
 interface DadosDocumento {
   usuario: string;
-  tipoDocumento: string;
-  quantidadePaginas: number;
+  data: Date;
+  processadoData: number;
+  totalProcessado: number;
 }
 @Component({
   selector: 'app-baixar-botao-sintetico',
@@ -33,18 +34,21 @@ export class BaixarBotaoSinteticoComponent {
     this.dataSource.data = [
       {
         usuario: 'Fernando',
-        tipoDocumento: 'Relatório',
-        quantidadePaginas: 10,
+        data: new Date('2023-05-20'),
+        processadoData: 3,
+        totalProcessado: 9,
       },
       {
         usuario: 'Carla',
-        tipoDocumento: 'RG',
-        quantidadePaginas: 5,
+        data: new Date('2023-05-21'),
+        processadoData: 1,
+        totalProcessado: 3,
       },
       {
         usuario: 'Paulo',
-        tipoDocumento: 'Fatura',
-        quantidadePaginas: 5,
+        data: new Date('2023-05-21'),
+        processadoData: 1,
+        totalProcessado: 5,
       },
     ];
   }
@@ -62,11 +66,12 @@ export class BaixarBotaoSinteticoComponent {
   }
 
   converterParaCSV(dados: DadosDocumento[]): string {
-    const cabecalho = ['Tipo de Documento', 'Data', 'Quantidade de Páginas'];
+    const cabecalho = ['Usuario', 'Data', 'Processadas na data escolhida', 'Total processado'];
     const linhas = dados.map((d) => [
       d.usuario,
-      d.tipoDocumento,
-      d.quantidadePaginas,
+      d.data.toDateString(),
+      d.processadoData,
+      d.totalProcessado,
     ]);
 
     const conteudoCSV =

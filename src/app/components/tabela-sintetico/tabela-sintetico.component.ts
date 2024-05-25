@@ -12,8 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 
 interface DadosDocumento {
   usuario: string;
-  tipoDocumento: string;
-  quantidadePaginas: number;
+  data: Date;
+  processadoData: number;
+  totalProcessado: number;
 }
 
 @Component({
@@ -34,7 +35,7 @@ interface DadosDocumento {
   styleUrl: './tabela-sintetico.component.css'
 })
 export class TabelaSinteticoComponent {
-  displayedColumns: string[] = ['usuario','tipoDocumento', 'quantidadePaginas'];
+  displayedColumns: string[] = ['usuario','data', 'processadoData','totalProcessado'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   tiposDocumento = ['Relatório', 'Fatura', 'Contrato', 'Outros'];
   tipoDocumentoSelecionado: string = ''; // Inicialização com valor padrão
@@ -45,18 +46,21 @@ export class TabelaSinteticoComponent {
     this.dataSource.data = [
       {
         usuario: 'Fernando',
-        tipoDocumento: 'Relatório',
-        quantidadePaginas: 10,
+        data: new Date('2023-05-20'),
+        processadoData: 3,
+        totalProcessado: 9,
       },
       {
         usuario: 'Carla',
-        tipoDocumento: 'RG',
-        quantidadePaginas: 5,
+        data: new Date('2023-05-21'),
+        processadoData: 1,
+        totalProcessado: 3,
       },
       {
         usuario: 'Paulo',
-        tipoDocumento: 'Fatura',
-        quantidadePaginas: 5,
+        data: new Date('2023-05-21'),
+        processadoData: 1,
+        totalProcessado: 5,
       },
     ];
   }
@@ -70,8 +74,9 @@ export class TabelaSinteticoComponent {
       const filtroArray = filtro.split('$');
       const colunas = [
         data.usuario.toLowerCase(),
-        data.tipoDocumento.toLowerCase(),
-        data.quantidadePaginas.toString(),
+        data.data.toDateString(),
+        data.processadoData.toString(),
+        data.totalProcessado.toString(),
       ];
 
       filtroArray.forEach((filtro, index) => {
