@@ -18,36 +18,37 @@
     display: block;
     text-decoration: none;
     color: #C1C1C1;
-    padding: 20px 65px 20px 20px;
+    padding: 20px 50px 20px 20px;
     cursor: pointer;
     
 }
 .menu-box a:hover{
     color: #F41D97;
-    background-color: #FFDDF2 ;
 
 }
-.espaco-item{
-  background-color: #FFDDF2 ;
-}
+
 
 .item-link{
   padding: 10px 0px 10px 20px;
   cursor: pointer;
 }
 .item-link:hover{
-  background-color: #FFDDF2 ;
   color: #F41D97;
 
 }
 
 .menu-item {
-    position: relative;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
+    align-items: center;
   }
   .menu-item a{
     color: #F41D97;
   }
 
+  mat-icon{
+    font-size: 20px; 
+    padding-top: 5px;
+    color: #F41D97;
+  }
   
