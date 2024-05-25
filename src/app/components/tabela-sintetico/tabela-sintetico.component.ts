@@ -1,3 +1,4 @@
+// src/app/tabela-sintetico/tabela-sintetico.component.ts
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,12 +11,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 
-interface DadosDocumento {
-  usuario: string;
-  data: Date;
-  processadoData: number;
-  totalProcessado: number;
-}
+import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
+import { DadosDocumento } from '../../dados-documento-sintetico.model';
 
 @Component({
   selector: 'app-tabela-sintetico',
@@ -32,37 +29,17 @@ interface DadosDocumento {
     MatTableModule,
   ],
   templateUrl: './tabela-sintetico.component.html',
-  styleUrl: './tabela-sintetico.component.css'
+  styleUrls: ['./tabela-sintetico.component.css']
 })
 export class TabelaSinteticoComponent {
-  displayedColumns: string[] = ['usuario','data', 'processadoData','totalProcessado'];
+  displayedColumns: string[] = ['usuario', 'data', 'processadoData', 'totalProcessado'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   tiposDocumento = ['Relatório', 'Fatura', 'Contrato', 'Outros'];
   tipoDocumentoSelecionado: string = ''; // Inicialização com valor padrão
   dataSelecionada: Date | null = null; // Inicialização com valor nulo
 
-  ngOnInit() {
-    // Inicialize com dados fictícios ou carregue os dados de uma API
-    this.dataSource.data = [
-      {
-        usuario: 'Fernando',
-        data: new Date('2023-05-20'),
-        processadoData: 3,
-        totalProcessado: 9,
-      },
-      {
-        usuario: 'Carla',
-        data: new Date('2023-05-21'),
-        processadoData: 1,
-        totalProcessado: 3,
-      },
-      {
-        usuario: 'Paulo',
-        data: new Date('2023-05-21'),
-        processadoData: 1,
-        totalProcessado: 5,
-      },
-    ];
+  constructor(private dadosService: DadosDocumentoService) {
+    this.dataSource.data = this.dadosService.getDados();
   }
 
   aplicarFiltro() {
@@ -96,5 +73,4 @@ export class TabelaSinteticoComponent {
     }`;
     this.dataSource.filter = valorFiltro.trim().toLowerCase();
   }
-
 }

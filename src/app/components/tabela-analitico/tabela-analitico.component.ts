@@ -15,11 +15,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 
-interface DadosDocumento {
-  tipoDocumento: string;
-  data: Date;
-  quantidadePaginas: number;
-}
+import { DadosDocumentoService } from '../../dados-documento-analitico.service';
+import { DadosDocumento } from '../../dados-documento-analitico.model';
+
 
 @Component({
   selector: 'app-tabela-analitico',
@@ -50,30 +48,14 @@ export class TabelaAnaliticoComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  ngOnInit() {
-    // Inicialize com dados fictícios ou carregue os dados de uma API
-    this.dataSource.data = [
-      {
-        tipoDocumento: 'Relatório',
-        data: new Date('2023-05-20'),
-        quantidadePaginas: 10,
-      },
-      {
-        tipoDocumento: 'RG',
-        data: new Date('2023-05-21'),
-        quantidadePaginas: 5,
-      },
-      {
-        tipoDocumento: 'Fatura',
-        data: new Date('2023-05-21'),
-        quantidadePaginas: 5,
-      },
-    ];
-  }
-
+  
   ngAfterViewInit() {
     // Conectar o paginator ao dataSource após a visualização ser inicializada
     this.dataSource.paginator = this.paginator;
+  }
+
+  constructor(private dadosService: DadosDocumentoService) {
+    this.dataSource.data = this.dadosService.getDados();
   }
 
   aplicarFiltro() {

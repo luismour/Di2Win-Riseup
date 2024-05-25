@@ -1,18 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { MatTableDataSource } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// src/app/baixar-botao-sintetico/baixar-botao-sintetico.component.ts
+import { Component } from '@angular/core';
+import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
+import { DadosDocumento } from '../../dados-documento-sintetico.model';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-interface DadosDocumento {
-  usuario: string;
-  data: Date;
-  processadoData: number;
-  totalProcessado: number;
-}
+
 @Component({
   selector: 'app-baixar-botao-sintetico',
   standalone: true,
@@ -24,39 +20,15 @@ interface DadosDocumento {
     MatIconModule,
   ],
   templateUrl: './baixar-botao-sintetico.component.html',
-  styleUrl: './baixar-botao-sintetico.component.css'
+  styleUrls: ['./baixar-botao-sintetico.component.css']
 })
 export class BaixarBotaoSinteticoComponent {
 
-  dataSource = new MatTableDataSource<DadosDocumento>([]);
-  ngOnInit() {
-    // Inicialize com dados fictícios ou carregue os dados de uma API
-    this.dataSource.data = [
-      {
-        usuario: 'Fernando',
-        data: new Date('2023-05-20'),
-        processadoData: 3,
-        totalProcessado: 9,
-      },
-      {
-        usuario: 'Carla',
-        data: new Date('2023-05-21'),
-        processadoData: 1,
-        totalProcessado: 3,
-      },
-      {
-        usuario: 'Paulo',
-        data: new Date('2023-05-21'),
-        processadoData: 1,
-        totalProcessado: 5,
-      },
-    ];
-  }
-
-
+  constructor(private dadosService: DadosDocumentoService) {}
 
   baixarDados() {
-    const dadosCSV = this.converterParaCSV(this.dataSource.filteredData);
+    const dados = this.dadosService.getDados();
+    const dadosCSV = this.converterParaCSV(dados);
     const blob = new Blob([dadosCSV], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     const url = URL.createObjectURL(blob);
