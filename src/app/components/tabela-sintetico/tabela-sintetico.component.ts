@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,16 +9,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatIconModule } from '@angular/material/icon';
 
 interface DadosDocumento {
+  usuario: string;
   tipoDocumento: string;
-  data: Date;
   quantidadePaginas: number;
 }
+
 @Component({
-  selector: 'app-select-date',
+  selector: 'app-tabela-sintetico',
   standalone: true,
   imports: [
     CommonModule,
@@ -31,36 +29,33 @@ interface DadosDocumento {
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatIconModule,
   ],
-  templateUrl: './select-date.component.html',
-  styleUrl: './select-date.component.css'
+  templateUrl: './tabela-sintetico.component.html',
+  styleUrl: './tabela-sintetico.component.css'
 })
-export class SelectDateComponent {
-  displayedColumns: string[] = ['tipoDocumento', 'data', 'quantidadePaginas'];
+export class TabelaSinteticoComponent {
+  displayedColumns: string[] = ['usuario','tipoDocumento', 'quantidadePaginas'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   tiposDocumento = ['Relatório', 'Fatura', 'Contrato', 'Outros'];
   tipoDocumentoSelecionado: string = ''; // Inicialização com valor padrão
   dataSelecionada: Date | null = null; // Inicialização com valor nulo
 
-
   ngOnInit() {
     // Inicialize com dados fictícios ou carregue os dados de uma API
     this.dataSource.data = [
       {
+        usuario: 'Fernando',
         tipoDocumento: 'Relatório',
-        data: new Date('2023-05-20'),
         quantidadePaginas: 10,
       },
       {
+        usuario: 'Carla',
         tipoDocumento: 'RG',
-        data: new Date('2023-05-21'),
         quantidadePaginas: 5,
       },
       {
+        usuario: 'Paulo',
         tipoDocumento: 'Fatura',
-        data: new Date('2023-05-21'),
         quantidadePaginas: 5,
       },
     ];
@@ -74,8 +69,8 @@ export class SelectDateComponent {
       const matchFilter: boolean[] = [];
       const filtroArray = filtro.split('$');
       const colunas = [
+        data.usuario.toLowerCase(),
         data.tipoDocumento.toLowerCase(),
-        data.data.toDateString(),
         data.quantidadePaginas.toString(),
       ];
 
@@ -95,29 +90,6 @@ export class SelectDateComponent {
         : ''
     }`;
     this.dataSource.filter = valorFiltro.trim().toLowerCase();
-  }
-
-  baixarDados() {
-    const dadosCSV = this.converterParaCSV(this.dataSource.filteredData);
-    const blob = new Blob([dadosCSV], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'documentos.csv');
-    link.click();
-  }
-
-  converterParaCSV(dados: DadosDocumento[]): string {
-    const cabecalho = ['Tipo de Documento', 'Data', 'Quantidade de Páginas'];
-    const linhas = dados.map((d) => [
-      d.tipoDocumento,
-      d.data.toDateString(),
-      d.quantidadePaginas,
-    ]);
-
-    const conteudoCSV =
-      cabecalho.join(',') + '\n' + linhas.map((e) => e.join(',')).join('\n');
-    return conteudoCSV;
   }
 
 }

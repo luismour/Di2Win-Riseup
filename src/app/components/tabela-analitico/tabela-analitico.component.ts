@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { MatPaginator } from '@angular/material/paginator';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,10 +20,12 @@ interface DadosDocumento {
   data: Date;
   quantidadePaginas: number;
 }
+
 @Component({
-  selector: 'app-select-date',
+  selector: 'app-tabela-analitico',
   standalone: true,
   imports: [
+    TabelaAnaliticoComponent,
     CommonModule,
     FormsModule,
     MatButtonModule,
@@ -34,16 +38,17 @@ interface DadosDocumento {
     MatPaginatorModule,
     MatIconModule,
   ],
-  templateUrl: './select-date.component.html',
-  styleUrl: './select-date.component.css'
+  templateUrl: './tabela-analitico.component.html',
+  styleUrl: './tabela-analitico.component.css'
 })
-export class SelectDateComponent {
+export class TabelaAnaliticoComponent {
   displayedColumns: string[] = ['tipoDocumento', 'data', 'quantidadePaginas'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   tiposDocumento = ['Relatório', 'Fatura', 'Contrato', 'Outros'];
   tipoDocumentoSelecionado: string = ''; // Inicialização com valor padrão
   dataSelecionada: Date | null = null; // Inicialização com valor nulo
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit() {
     // Inicialize com dados fictícios ou carregue os dados de uma API
@@ -64,6 +69,11 @@ export class SelectDateComponent {
         quantidadePaginas: 5,
       },
     ];
+  }
+
+  ngAfterViewInit() {
+    // Conectar o paginator ao dataSource após a visualização ser inicializada
+    this.dataSource.paginator = this.paginator;
   }
 
   aplicarFiltro() {
@@ -95,29 +105,6 @@ export class SelectDateComponent {
         : ''
     }`;
     this.dataSource.filter = valorFiltro.trim().toLowerCase();
-  }
-
-  baixarDados() {
-    const dadosCSV = this.converterParaCSV(this.dataSource.filteredData);
-    const blob = new Blob([dadosCSV], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'documentos.csv');
-    link.click();
-  }
-
-  converterParaCSV(dados: DadosDocumento[]): string {
-    const cabecalho = ['Tipo de Documento', 'Data', 'Quantidade de Páginas'];
-    const linhas = dados.map((d) => [
-      d.tipoDocumento,
-      d.data.toDateString(),
-      d.quantidadePaginas,
-    ]);
-
-    const conteudoCSV =
-      cabecalho.join(',') + '\n' + linhas.map((e) => e.join(',')).join('\n');
-    return conteudoCSV;
   }
 
 }

@@ -1,0 +1,14 @@
+.baixar{
+    border-color: #f41d97;
+    background-color: transparent;
+    color: #f41d97;
+    padding: 15px 20px 15px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}

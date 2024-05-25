@@ -7,7 +7,9 @@
 }
 .filter-container {
   display: flex;
-  margin-bottom: 20px;
+  gap: 5%;
+  margin: 20px 0px 50px 20px;
+  align-items: center;
 }
 
 mat-form-field {
@@ -26,7 +28,5 @@ table.mat-elevation-z8 {
 }
 
 .filter-container {
-  display: flex;
-  justify-content: space-between; /* Isso alinha os itens horizontalmente */
   margin-bottom: 20px;
 }
