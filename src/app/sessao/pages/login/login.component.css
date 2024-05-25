@@ -1,0 +1,20 @@
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 34px;
+  box-shadow: none;
+}
+
+.login-form {
+
+  margin: 0 auto;
+}
+
+.esqueceuSenha {
+  font-size: 16px;
+  text-decoration: none;
+  color: #0038FF;
+  text-align: end;
+}

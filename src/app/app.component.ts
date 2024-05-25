@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { SessaoComponent } from './sessao/sessao.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
