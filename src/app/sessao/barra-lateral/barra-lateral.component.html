@@ -3,19 +3,20 @@
     <li><a>Painel principal</a></li>
     <li><a>Enviar arquivo</a></li>
     <li><a>Documentação</a></li>
-
-    <li class="menu-item" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
-      <a [style.color]="textColor" [style.backgroundColor]="backgroundColor"
-        >Relatórios</a
-      >
-
-      <div class="dropdown-menu" *ngIf="isMenuVisible">
-        <ul>
-          <li routerLink="/">Relatório analítico</li>
-          <li routerLink="/Relatorio-sintático">Relatório sintético</li>
-        </ul>
-      </div>
+    
+    
+    <div class="div-menu-item" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+      <div class="espaco-item">
+        <li class="menu-item" >
+      <a [style.color]="textColor" [style.backgroundColor]="backgroundColor">Relatórios</a>
     </li>
+      </div>
+  
+        <li class="item-link" *ngIf="isMenuVisible"routerLink="/">Relatório analítico</li>
+        <li class="item-link" *ngIf="isMenuVisible" routerLink="/Relatorio-sintático">Relatório sintético</li>
+      </div>
+    
+        
     <li><a>Perfil</a></li>
     <li><a>Sair</a></li>
   </ul>

@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class BarraLateralComponent {
 
   isMenuVisible = false;
-  textColor = '#C1C1C1';
+  textColor = '#F41D97';
   backgroundColor = 'transparent';
 
   showMenu() {
@@ -22,7 +22,7 @@ export class BarraLateralComponent {
 
   hideMenu() {
     this.isMenuVisible = false;
-    this.changeColor('#C1C1C1', 'transparent');
+    this.changeColor('#F41D97', 'transparent');
   }
   private changeColor(color: string, backgroundColor: string) {
     this.textColor = color;
