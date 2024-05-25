@@ -1,0 +1,20 @@
+<app-defaul-login-layout
+  title="Bem-vindo de volta!"
+  BtnText="ENTRAR"
+>
+  <form class="login-form"  [formGroup]="loginForm">
+    <app-primary-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="E-mail *"
+    ></app-primary-input>
+    <app-primary-input
+      formControlName="senha"
+      inputName="senha"
+      type="senha"
+      label="Senha *"
+    ></app-primary-input>
+    <a class="esqueceuSenha" href="#">Esqueceu sua senha?</a>
+  </form>
+</app-defaul-login-layout>

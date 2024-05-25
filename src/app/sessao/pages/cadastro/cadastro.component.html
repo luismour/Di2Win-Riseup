@@ -1,0 +1,34 @@
+<app-defaul-login-layout
+  title="Bem-vindo!"
+  PrimaryBtnText="CADASTRAR"
+  SecundaryBtnText="'VOLTAR"
+>
+  <form class="login-form"  [formGroup]="cadastroForm">
+    <app-primary-input
+      formControlName="name"
+      inputName="name"
+      type="text"
+      label="Nome *"
+    ></app-primary-input>
+    <app-primary-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="E-mail *"
+    ></app-primary-input>
+    <app-primary-input
+      formControlName="telefone"
+      inputName="telefone"
+      type="telefone"
+      label="Telefone *"
+      placeholder="+55 "
+    ></app-primary-input>
+    <app-primary-input
+      formControlName="confirmaSenha"
+      inputName="confirmaSenha"
+      type="senha"
+      label="Confirmar Senha *"
+    ></app-primary-input>
+
+  </form>
+</app-defaul-login-layout>
