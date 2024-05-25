@@ -34,9 +34,7 @@ interface DadosDocumento {
   templateUrl: './relatorio-sintetico.component.html',
   styleUrls: ['./relatorio-sintetico.component.css'],
 })
-
-export class RelatorioSinteticoComponent implements OnInit{
-
+export class RelatorioSinteticoComponent implements OnInit {
   displayedColumns: string[] = ['tipoDocumento', 'data', 'quantidadePaginas'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   tiposDocumento = ['Relatório', 'Fatura', 'Contrato', 'Outros'];
@@ -44,7 +42,6 @@ export class RelatorioSinteticoComponent implements OnInit{
   dataSelecionada: Date | null = null; // Inicialização com valor nulo
 
   ngOnInit() {
-    // Inicialize com dados fictícios ou carregue os dados de uma API
     this.dataSource.data = [
       {
         tipoDocumento: 'Relatório',
@@ -118,4 +115,3 @@ export class RelatorioSinteticoComponent implements OnInit{
     return conteudoCSV;
   }
 }
-
