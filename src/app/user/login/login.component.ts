@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { DefaulLoginLayoutComponent } from '../../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
+import { DefaulLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { PrimaryInputComponent } from '../../../components/primary-input/primary
   imports: [
     DefaulLoginLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent
+    PrimaryInputComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

@@ -1,15 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {BaixarBotaoAnaliticoComponent} from '../../../components/baixar-botao-analitico/baixar-botao-analitico.component'
 
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { SelectDocumentoComponent } from '../../../components/select-documento/select-documento.component';
-import {SelectDateComponent} from '../../../components/select-date/select-date.component'
-import{TabelaAnaliticoComponent} from '../../../components/tabela-analitico/tabela-analitico.component'
-
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { SelectDocumentoComponent } from '../../../../components/select-documento/select-documento.component';
+import { TabelaAnaliticoComponent } from '../../../../components/tabela-analitico/tabela-analitico.component';
+import { SelectDateComponent } from '../../../../components/select-date/select-date.component';
+import { BaixarBotaoAnaliticoComponent } from '../../../../components/baixar-botao-analitico/baixar-botao-analitico.component';
 
 interface DadosDocumento {
   tipoDocumento: string;
