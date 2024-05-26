@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SelectDocumentoComponent } from '../../../components/select-documento/select-documento.component';
 import{SelectUsuarioComponent} from '../../../components/select-usuario/select-usuario.component'
