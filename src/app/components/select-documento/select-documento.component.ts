@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./select-documento.component.css'],
 })
 export class SelectDocumentoComponent {
-  selectedType: string | null = null;
 
-  onDataSelectorChange(event: Event): void {
-    const selectElement = event.target as HTMLSelectElement;
-    this.selectedType = selectElement.value;
-  }
 }
 

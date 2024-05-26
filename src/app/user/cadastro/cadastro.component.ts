@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DefaulLoginLayoutComponent } from '../../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
+import { DefaulLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +9,7 @@ import { PrimaryInputComponent } from '../../../components/primary-input/primary
   imports: [
     DefaulLoginLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent
+    PrimaryInputComponent,
   ],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],

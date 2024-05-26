@@ -1,14 +1,26 @@
 import { Routes } from '@angular/router';
-import { SessaoComponent } from './sessao/sessao.component';
-import { RelatorioAnaliticoComponent } from './sessao/pages/relatorio-analitico/relatorio-analitico.component';
-import { RelatorioSinteticoComponent } from './sessao/pages/relatorio-sintetico/relatorio-sintetico.component';
-import { LoginComponent } from './sessao/pages/login/login.component';
-import { CadastroComponent } from './sessao/pages/cadastro/cadastro.component';
+import { SessaoComponent } from './relatorio/sessao/sessao.component';
+import { RelatorioAnaliticoComponent } from './relatorio/sessao/pages/relatorio-analitico/relatorio-analitico.component';
+import { RelatorioSinteticoComponent } from './relatorio/sessao/pages/relatorio-sintetico/relatorio-sintetico.component';
+import { LoginComponent } from './user/login/login.component';
+import { CadastroComponent } from './user/cadastro/cadastro.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
+import { DashboardComponent } from './relatorio/sessao/pages/dashboard/dashboard.component';
+
 
 export const routes: Routes = [
-  { path: '', component: RelatorioAnaliticoComponent },
-  { path: 'Relatorio-sintático', component: RelatorioSinteticoComponent },
-  { path: '**', redirectTo: '' },
-  { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroComponent },
+  {
+    path: 'relatorio',
+    component: SessaoComponent,
+    children: [
+      { path: 'sintetico', component: RelatorioSinteticoComponent },
+      { path: 'analitico', component: RelatorioAnaliticoComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: '', redirectTo: 'analitico', pathMatch: 'full' },
+    ],
+  },
+
+  { path: 'login', component: LoginComponent},
+  { path: 'cadastro', component: CadastroComponent},
+  { path: '**', redirectTo: 'login' },
 ];
