@@ -1,0 +1,23 @@
+section{
+    width: 38vh;
+    height: 10vh;
+    display: flex;
+    gap: 4%;
+    border-radius: 8px;
+    box-shadow: 5px 3px 9px -1px rgba(212,210,212,1);
+    align-items: center;
+    padding-left: 12px;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+.texto h2{
+    font-size: 2.8vh;
+    margin: 0;
+}
+.texto p{
+    font-size: 2.2vh;
+    margin: 0;
+}

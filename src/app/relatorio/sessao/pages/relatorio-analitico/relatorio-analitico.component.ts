@@ -5,10 +5,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { SelectDocumentoComponent } from '../../../../components/select-documento/select-documento.component';
 import { TabelaAnaliticoComponent } from '../../../../components/tabela-analitico/tabela-analitico.component';
-import { SelectDateComponent } from '../../../../components/select-date/select-date.component';
-import { BaixarBotaoAnaliticoComponent } from '../../../../components/baixar-botao-analitico/baixar-botao-analitico.component';
+import { SelectDocumentoComponent } from '../../../../components/botoes/select-documento/select-documento.component';
+import { SelectDateComponent } from '../../../../components/botoes/select-date/select-date.component';
+import { BaixarBotaoAnaliticoComponent } from '../../../../components/botoes/baixar-botao-analitico/baixar-botao-analitico.component';
 
 interface DadosDocumento {
   tipoDocumento: string;

@@ -18,8 +18,8 @@ export class LineChartComponent {
       datasets: [
         {
           label: 'Páginas processadas',
-          data: [20000, 12500, 17500, 25000],
-          backgroundColor: ['#A70368']
+          data: [20000, 12500, 17500, 17500, 25000],
+          backgroundColor: ['#357DED']
         }
       ],
     };

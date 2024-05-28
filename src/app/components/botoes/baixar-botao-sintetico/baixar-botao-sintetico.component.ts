@@ -1,7 +1,7 @@
 // src/app/baixar-botao-sintetico/baixar-botao-sintetico.component.ts
 import { Component } from '@angular/core';
-import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
-import { DadosDocumento } from '../../dados-documento-sintetico.model';
+import { DadosDocumentoService } from '../../../dados-documento-sintetico.service';
+import { DadosDocumento } from '../../../dados-documento-sintetico.model';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';

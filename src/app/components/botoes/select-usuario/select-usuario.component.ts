@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
-import { Usuario } from '../../usuario.model';
+import { DadosDocumentoService } from '../../../dados-documento-sintetico.service';
+import { Usuario } from '../../../usuario.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
