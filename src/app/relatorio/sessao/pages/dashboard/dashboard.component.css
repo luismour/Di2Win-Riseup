@@ -5,3 +5,23 @@
   .relatorio-box hr {
     border-color: #f41d97;
   }
+  .graficos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+    margin-top: 20px;
+  }
+  .graficos1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .graficos2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }

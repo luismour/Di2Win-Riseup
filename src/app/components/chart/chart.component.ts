@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatLabel } from '@angular/material/form-field';
 import { ChartModule } from 'primeng/chart';
 
 @Component({
@@ -18,10 +17,9 @@ export class ChartComponent {
       labels: ['CPF', 'Contratos', 'CNH', 'NFS'],
       datasets: [
         {
-          label: '',
+          label: 'Qtd',
           data: [8000, 5750, 6750, 4500],
-          backgroundColor: ['#A70368'],
-          
+          backgroundColor: ['#A70368']
         }
       ],
     };
@@ -37,6 +35,12 @@ export class ChartComponent {
           },
         },
       },
+      plugins: {
+        legend: {
+          display: false // Desativa a exibição de legendas
+        }
+      }
+
     };
   }
 }
