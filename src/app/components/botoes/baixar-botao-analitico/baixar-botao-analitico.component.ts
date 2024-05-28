@@ -7,8 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 
-import { DadosDocumentoService } from '../../dados-documento-analitico.service';
-import { DadosDocumento } from '../../dados-documento-analitico.model';
+import { DadosDocumentoService } from '../../../dados-documento-analitico.service';
+import { DadosDocumento } from '../../../dados-documento-analitico.model';
 
 
 @Component({

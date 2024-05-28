@@ -1,14 +1,32 @@
 <div class="relatorio-box">
   <h1>Dashboard</h1>
   <hr />
+  <br>
+  <div class="cards">
+    <app-card-dados [qtd]="25874" [legenda]="'N° de páginas processadas'"></app-card-dados>
+    <app-card-dados [qtd]="7850" [legenda]="'Qtd de Usuários'"></app-card-dados>
+    <app-card-dados [qtd]="250" [legenda]="'N° de documentos processados'"></app-card-dados>
+  </div>
+
 </div>
 <div class="graficos">
-  <div class="graficos1">
-    <app-line-chart></app-line-chart>
-    <app-pie-chart></app-pie-chart>
-  </div>
-  <div class="graficos2">
-    <app-pie-chart></app-pie-chart>
-    <app-chart></app-chart>
-  </div>
+<div class="stacked">
+  <app-stacked-chart></app-stacked-chart>
+</div>
+  
+<div class="pie">
+  <app-pie-chart [rawData]="[8000, 5750, 6750, 4500]" [labels]="['CPF', 'Contratos', 'CNH', 'NFS']"
+    [chartTitle]="'Total de páginas acessadas'" [backgroundColors]="['#AC009B', '#FA01FF', '#A642F4', '#EBB9E3']">
+  </app-pie-chart>
+</div>
+  
+<div class="line">
+  <app-line-chart></app-line-chart>
+</div>
+  
+<div class="chart">
+  <app-chart></app-chart>
+</div>
+  
+
 </div>
