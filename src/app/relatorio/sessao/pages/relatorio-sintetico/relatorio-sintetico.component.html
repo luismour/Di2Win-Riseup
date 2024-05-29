@@ -1,8 +1,17 @@
 <div class="relatorio-box">
-  <h1>Relatório Sintético</h1>
+  <div class="paginas">
+    <a class="analitico-link" routerLink="/relatorio/analitico">
+    <div class="analitico">
+      <h1>Relatório Analítico</h1>
+    </div>
+    </a>
+      <div class="sintetico">
+        <h1>Relatório Sintetico</h1>
+      </div>
+
+  </div>
   <hr />
 </div>
-
 <div class="filter-container">
   <app-select-usuario></app-select-usuario>
   <app-select-date></app-select-date>
@@ -10,4 +19,5 @@
 </div>
 
 <app-tabela-sintetico></app-tabela-sintetico>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="mat-elevation-z8"></mat-paginator>
 

@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -9,12 +7,9 @@ import { TabelaAnaliticoComponent } from '../../../../components/tabela-analitic
 import { SelectDocumentoComponent } from '../../../../components/botoes/select-documento/select-documento.component';
 import { SelectDateComponent } from '../../../../components/botoes/select-date/select-date.component';
 import { BaixarBotaoAnaliticoComponent } from '../../../../components/botoes/baixar-botao-analitico/baixar-botao-analitico.component';
-
-interface DadosDocumento {
-  tipoDocumento: string;
-  data: Date;
-  quantidadePaginas: number;
-}
+import { RouterLink } from '@angular/router';
+import { DadosDocumento } from '../../../../dados-documento-analitico.model';
+import { DadosDocumentoService } from '../../../../dados-documento-analitico.service';
 
 @Component({
   selector: 'app-relatorio-analitico',
@@ -29,6 +24,7 @@ interface DadosDocumento {
     MatPaginator,
     MatPaginatorModule,
     MatTableModule,
+    RouterLink,
   ],
   templateUrl: './relatorio-analitico.component.html',
   styleUrls: ['./relatorio-analitico.component.css'],
