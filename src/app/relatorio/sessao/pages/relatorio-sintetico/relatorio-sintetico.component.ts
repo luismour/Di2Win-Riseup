@@ -8,6 +8,11 @@ import { SelectDocumentoComponent } from '../../../../components/botoes/select-d
 import { BaixarBotaoSinteticoComponent } from '../../../../components/botoes/baixar-botao-sintetico/baixar-botao-sintetico.component';
 import { SelectUsuarioComponent } from '../../../../components/botoes/select-usuario/select-usuario.component';
 import { SelectDateComponent } from '../../../../components/botoes/select-date/select-date.component';
+import { RouterLink } from '@angular/router';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { DadosDocumento } from '../../../../dados-documento-sintetico.model';
+import { DadosDocumentoService } from '../../../../dados-documento-sintetico.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 
@@ -21,11 +26,19 @@ import { SelectDateComponent } from '../../../../components/botoes/select-date/s
     SelectUsuarioComponent,
     CommonModule,
     FormsModule,
+    MatPaginator,
+    MatPaginatorModule,
     SelectDateComponent,
+    RouterLink,
   ],
   templateUrl: './relatorio-sintetico.component.html',
   styleUrls: ['./relatorio-sintetico.component.css'],
 })
 export class RelatorioSinteticoComponent  {
- 
+  dataSource = new MatTableDataSource<DadosDocumento>([]);
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  ngAfterViewInit() {
+    // Conectar o paginator ao dataSource após a visualização ser inicializada
+    this.dataSource.paginator = this.paginator;
+  }
 }

@@ -5,15 +5,14 @@
     <li><a>Documentação</a></li>
     
     
-    <div class="div-menu-item" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
-      <div class="espaco-item">
+    <div (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+      <div>
         <li class="menu-item" >
       <a [style.color]="textColor" [style.backgroundColor]="backgroundColor">Relatórios</a>
       <mat-icon>expand_more</mat-icon>
     </li>
       </div>
-        <li class="item-link" *ngIf="isMenuVisible"routerLink="/relatorio/analitico">Relatório analítico</li>
-        <li class="item-link" *ngIf="isMenuVisible" routerLink="/relatorio/sintetico">Relatório sintético</li>
+        <li class="item-link" *ngIf="isMenuVisible" routerLink="/relatorio/analitico">Relatórios gerados</li>
         <li class="item-link" *ngIf="isMenuVisible" routerLink="/relatorio/dashboard">Dashboard</li>
       </div>
     

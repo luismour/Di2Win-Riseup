@@ -1,5 +1,14 @@
 <div class="relatorio-box">
-  <h1>Relatório Analítico</h1>
+  <div class="paginas">
+    <div class="analitico">
+      <h1>Relatório Analítico</h1>
+    </div>
+    <a class="sintetico-link" routerLink="/relatorio/sintetico">
+      <div class="sintetico">
+        <h1>Relatório Sintetico</h1>
+      </div>
+    </a>
+  </div>
   <hr />
 </div>
 
@@ -11,8 +20,4 @@
 
 <app-tabela-analitico></app-tabela-analitico>
 
-<mat-paginator
-  [pageSizeOptions]="[5, 10, 20]"
-  showFirstLastButtons
-  class="mat-elevation-z8"
-></mat-paginator>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="mat-elevation-z8"></mat-paginator>
