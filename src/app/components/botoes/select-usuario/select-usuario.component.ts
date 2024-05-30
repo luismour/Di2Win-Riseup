@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DadosDocumentoService } from '../../../dados-documento-sintetico.service';
-import { Usuario } from '../../../usuario.model';
 import { CommonModule } from '@angular/common';
+import { FiltroService } from '../../../filtro.service';
 
 @Component({
   selector: 'app-select-usuario',
@@ -10,13 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './select-usuario.component.html',
   styleUrl: './select-usuario.component.css'
 })
-export class SelectUsuarioComponent implements OnInit {
-  usuarios: Usuario[] = []; // Array para armazenar os usuários
+export class SelectUsuarioComponent {
+  constructor(private filtroService: FiltroService) {}
 
-  constructor(private dadosService: DadosDocumentoService) {}
-
-  ngOnInit(): void {
-    // Ao inicializar o componente, obter os usuários do serviço
-    this.usuarios = this.dadosService.getUsuarios();
+  onUserSearch(value: string) {
+    this.filtroService.setFiltro(value);
   }
 }
