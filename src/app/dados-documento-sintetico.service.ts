@@ -38,6 +38,12 @@ export class DadosDocumentoService {
         processadoData: 1,
         totalProcessado: 5,
       },
+      {
+        usuario: 'lola',
+        data: new Date('2023-05-20'),
+        processadoData: 3,
+        totalProcessado: 9,
+      },
     ];
     this.dadosSubject.next(dadosIniciais);
   }
