@@ -14,19 +14,29 @@ export class DadosDocumentoService {
     // Inicialize com dados fictícios ou carregue os dados de uma API
     const dadosIniciais: DadosDocumento[] = [
       {
-        tipoDocumento: 'Relatório',
+        tipoDocumento: 'Relatorio',
         data: new Date('2023-05-20'),
         quantidadePaginas: 10,
       },
       {
         tipoDocumento: 'RG',
         data: new Date('2023-05-21'),
-        quantidadePaginas: 5,
+        quantidadePaginas: 1,
       },
       {
         tipoDocumento: 'Fatura',
         data: new Date('2023-05-22'),
         quantidadePaginas: 5,
+      },
+      {
+        tipoDocumento: 'Certidao',
+        data: new Date('2023-07-20'),
+        quantidadePaginas: 2,
+      },
+      {
+        tipoDocumento: 'RG',
+        data: new Date('2023-07-20'),
+        quantidadePaginas: 1,
       },
     ];
     this.dadosSubject.next(dadosIniciais);
