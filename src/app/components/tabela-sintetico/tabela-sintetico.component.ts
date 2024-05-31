@@ -1,5 +1,5 @@
-// src/app/tabela-sintetico/tabela-sintetico.component.ts
 import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
@@ -20,7 +20,6 @@ import { Subscription } from 'rxjs';
   templateUrl: './tabela-sintetico.component.html',
   styleUrls: ['./tabela-sintetico.component.css']
 })
-
 export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestroy {
   displayedColumns: string[] = ['usuario', 'data', 'processadoData', 'totalProcessado'];
   dataSource: MatTableDataSource<DadosDocumento>;

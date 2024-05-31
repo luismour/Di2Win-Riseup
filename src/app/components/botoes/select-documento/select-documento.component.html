@@ -1,8 +1,8 @@
 <div>
-    <select class="seletor-documento" >
-        <option value="">Tipo do documento</option>
-        <option value="type1">Relatorio</option>
-        <option value="type2">Fatura</option>
-        <option value="type3">CNH</option>
-    </select>
-</div>
+    <input
+    class="seletor-documento"
+      placeholder="Buscar documento"
+      type="text"
+      (input)="onUserSearch($any($event.target).value)" 
+    />
+  </div>

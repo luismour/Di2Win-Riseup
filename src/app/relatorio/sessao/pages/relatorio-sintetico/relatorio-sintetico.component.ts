@@ -1,26 +1,20 @@
-
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {TabelaSinteticoComponent} from '../../../../components/tabela-sintetico/tabela-sintetico.component';
-
+import { MatTableDataSource } from '@angular/material/table';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SelectDocumentoComponent } from '../../../../components/botoes/select-documento/select-documento.component';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { BaixarBotaoSinteticoComponent } from '../../../../components/botoes/baixar-botao-sintetico/baixar-botao-sintetico.component';
 import { SelectUsuarioComponent } from '../../../../components/botoes/select-usuario/select-usuario.component';
 import { SelectDateComponent } from '../../../../components/botoes/select-date/select-date.component';
-import { RouterLink } from '@angular/router';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { DadosDocumento } from '../../../../dados-documento-sintetico.model';
-import { DadosDocumentoService } from '../../../../dados-documento-sintetico.service';
-import { MatTableDataSource } from '@angular/material/table';
-
-
+import {TabelaSinteticoComponent} from '../../../../components/tabela-sintetico/tabela-sintetico.component';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-relatorio-sintetico',
   standalone: true,
   imports: [
-    SelectDocumentoComponent,
     TabelaSinteticoComponent,
     BaixarBotaoSinteticoComponent,
     SelectUsuarioComponent,
@@ -33,8 +27,26 @@ import { MatTableDataSource } from '@angular/material/table';
   ],
   templateUrl: './relatorio-sintetico.component.html',
   styleUrls: ['./relatorio-sintetico.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(500, style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class RelatorioSinteticoComponent  {
+  mostrarConteudo: boolean = true;
+
+  toggleConteudo() {
+    this.mostrarConteudo = !this.mostrarConteudo;
+  }
+  
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
