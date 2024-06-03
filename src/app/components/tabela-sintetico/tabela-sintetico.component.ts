@@ -9,6 +9,7 @@ import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
 import { DadosDocumento } from '../../dados-documento-sintetico.model';
 import { FiltroService } from '../../filtro.service';
 import { Subscription } from 'rxjs';
+import { FiltroData } from '../../filtroDate.service';
 
 @Component({
   selector: 'app-tabela-sintetico',
@@ -28,7 +29,11 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
 
   private filtroSubscription: Subscription | null = null;
 
-  constructor(private dadosService: DadosDocumentoService, private filtroService: FiltroService) {
+  constructor(
+    private dadosService: DadosDocumentoService,
+    private filtroService: FiltroService,
+    private filtroDateService: FiltroData
+  ) {
     this.dataSource = new MatTableDataSource<DadosDocumento>([]);
     this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
       return data.usuario.toLowerCase().includes(filter.toLowerCase());
@@ -40,6 +45,25 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
     this.filtroSubscription = this.filtroService.filtro$.subscribe(filtro => {
       this.dataSource.filter = filtro.trim().toLowerCase();
     });
+  
+    this.filtroDateService.filtro$.subscribe(filtro => {
+    
+      this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
+   
+        const [startDateStr, endDateStr] = filter.split(' - ');
+        const startDate = this.convertStringToDate(startDateStr);
+        const endDate = this.convertStringToDate(endDateStr);
+  
+        return data.data >= startDate && data.data <= endDate;
+      };
+     
+      this.dataSource.filter = filtro;
+    });
+  }
+  
+  convertStringToDate(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('/');
+    return new Date(`${year}-${month}-${day}`);
   }
 
   ngAfterViewInit() {

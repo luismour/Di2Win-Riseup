@@ -43,6 +43,18 @@ export class DadosDocumentoService {
         processadoData: 3,
         totalProcessado: 9,
       },
+      {
+        usuario: 'Will',
+        data: new Date('2024-05-05'),
+        processadoData: 3,
+        totalProcessado: 9,
+      },
+      {
+        usuario: 'Sofia',
+        data: new Date('2024-05-10'),
+        processadoData: 3,
+        totalProcessado: 9,
+      },
     ];
     this.dadosSubject.next(dadosIniciais);
   }
