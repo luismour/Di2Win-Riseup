@@ -1,0 +1,48 @@
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 34px;
+  box-shadow: none;
+}
+
+.login-form {
+
+  margin: 0 auto;
+}
+
+.btns {
+  align-items: start;
+  button {
+    border-radius: 8px;
+    width: 260px;
+    height: 40px;
+    padding: 0px 16px;
+    border: none;
+    cursor: pointer;
+
+  }
+  .btn-voltar {
+    background-color: black;
+    margin: 0px 18px 0px 0px;
+  }
+
+  .voltar {
+    color: #fff;
+  }
+
+  .btn-entrar {
+    background-color: #0000001f;
+    text-decoration: none;
+  }
+
+  .entrar {
+    color: #00000042;
+  }
+}
+
+.link-login {
+  text-decoration: none;
+  color: #cf006b;
+}

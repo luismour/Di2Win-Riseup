@@ -6,6 +6,7 @@ import { LoginComponent } from './user/login/login.component';
 import { CadastroComponent } from './user/cadastro/cadastro.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { DashboardComponent } from './relatorio/sessao/pages/dashboard/dashboard.component';
+import { RecuperarSenhaComponent } from './user/recuperar-senha/recuperar-senha.component';
 
 
 export const routes: Routes = [
@@ -22,5 +23,6 @@ export const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
   { path: 'cadastr', component: CadastroComponent},
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
   { path: '**', redirectTo: 'login' },
 ];
