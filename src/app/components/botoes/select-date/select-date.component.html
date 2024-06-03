@@ -1,17 +1,11 @@
-<div class="container" [formGroup]="range">
-  <div class="all">
-      <mat-form-field appearance="fill" style="width: 160px;">
-          <input matInput [matDatepicker]="startPicker" placeholder="Data inicial" formControlName="start">
-          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-          <mat-datepicker #startPicker></mat-datepicker>
-      </mat-form-field>
-  </div>
-
-  <div>
-      <mat-form-field appearance="fill" style="width: 160px;">
-          <input matInput [matDatepicker]="endPicker" placeholder="Data final" formControlName="end" >
-          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
-          <mat-datepicker #endPicker></mat-datepicker>
-      </mat-form-field>
-  </div>
-</div>
+<mat-form-field>
+    <mat-label>Buscar por data</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="data inicial" >
+      <input matEndDate placeholder="data final" >
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+  

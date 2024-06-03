@@ -37,7 +37,6 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
 
   ngOnInit(): void {
     this.dataSource.data = this.dadosService.getDados();
-
     this.filtroSubscription = this.filtroService.filtro$.subscribe(filtro => {
       this.dataSource.filter = filtro.trim().toLowerCase();
     });

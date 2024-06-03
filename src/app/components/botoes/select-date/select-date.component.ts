@@ -1,12 +1,12 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiltroService } from '../../../filtro.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { FiltroService } from '../../../filtro.service';
 
 export const MY_FORMATS = {
   parse: {
@@ -19,7 +19,6 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-
 @Component({
   selector: 'app-select-date',
   standalone: true,
@@ -39,14 +38,6 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ]
 })
-export class SelectDateComponent{
-  range: FormGroup;
+export class SelectDateComponent {
 
-  constructor(private fb: FormBuilder, private dateAdapter: DateAdapter<Date>) {
-    this.dateAdapter.setLocale('pt-BR');
-    this.range = this.fb.group({
-      start: [],
-      end: []
-    });
-  }
 }
