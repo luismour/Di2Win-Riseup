@@ -47,18 +47,17 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
     });
   
     this.filtroDateService.filtro$.subscribe(filtro => {
-    
-      this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
-   
-        const [startDateStr, endDateStr] = filter.split(' - ');
-        const startDate = this.convertStringToDate(startDateStr);
-        const endDate = this.convertStringToDate(endDateStr);
-  
-        return data.data >= startDate && data.data <= endDate;
-      };
-     
-      this.dataSource.filter = filtro;
-    });
+  if (filtro && filtro.includes(' - ')) {
+    const [startDateStr, endDateStr] = filtro.split(' - ');
+    const startDate = this.convertStringToDate(startDateStr);
+    const endDate = this.convertStringToDate(endDateStr);
+
+    this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
+      return data.data >= startDate && data.data <= endDate;
+    };
+    this.dataSource.filter = filtro;
+  }
+});
   }
   
   convertStringToDate(dateStr: string): Date {
