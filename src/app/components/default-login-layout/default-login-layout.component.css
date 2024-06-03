@@ -2,6 +2,7 @@ main{
   display: flex;
   flex-direction: row;
   height: 100%;
+  font-family: Montserrat, Roboto, monospace;
 
   background-color: #F2F2F2;
 
@@ -59,6 +60,7 @@ main{
     border-color: #ffffff;
     align-items: end;
     cursor: pointer;
+    margin-left: 40px;
   }
 
   .form-section{
@@ -81,37 +83,12 @@ main{
       line-height: 18.15px;
       text-align: left;
       margin-bottom: 45px;
-    }
-
-
-    button {
-      border-radius: 8px;
-      width: 429px;
-      height: 31px;
-      top: 521px;
-      left: 898px;
-      gap: 10px;
-      opacity: 20px;
-      border: none;
-      background: transparent;
-      font-size: 16px;
-      font-weight: 500;
-
-      background-color: #C2B8B8;
-      color: #868686;
-      gap: 30px;
-      cursor: pointer;
+      margin: 0px 0px 16px;
+      padding: 4.5px;
+      font: 500 1.25rem / 20px Montserrat, Roboto, monospace;
     }
   }
-  .cliqueCadastrar {
-    font-size: 15px;
-    margin: 0 0 12px;
-    padding: 0 0 8px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #0038FF;
-    text-align: center;
-  }
+
 
   .copirything-text {
     text-align: center;

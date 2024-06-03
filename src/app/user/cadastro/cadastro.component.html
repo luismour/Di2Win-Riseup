@@ -1,7 +1,5 @@
 <app-defaul-login-layout
   title="Bem-vindo!"
-  PrimaryBtnText="CADASTRAR"
-  SecundaryBtnText="'VOLTAR"
 >
   <form class="login-form"  [formGroup]="cadastroForm">
     <app-primary-input
@@ -24,11 +22,34 @@
       placeholder="+55 "
     ></app-primary-input>
     <app-primary-input
+      formControlName="senha"
+      inputName="senha"
+      type="senha"
+      label="Senha *"
+    ></app-primary-input>
+    <app-primary-input
       formControlName="confirmaSenha"
       inputName="confirmaSenha"
-      type="senha"
+      type="confirmaSenha"
       label="Confirmar Senha *"
     ></app-primary-input>
-
   </form>
+  <br>
+  <section class="termos">
+    <mat-slide-toggle formName="acceptTerms"><span class="span-terms">Ao clicar em cadastrar, concordo com os <a href="https://www.di2win.com/termos-de-uso-do-portal-extraidados" class="link-terms">Termos de uso</a></span></mat-slide-toggle>
+  </section>
+  <br>
+  <section class="btns">
+    <button class="btn-voltar" [routerLink]="['/login']" routerLinkActive="router-link-active"  ><span  class="voltar">VOLTAR</span></button>
+    <button class="btn-cadastrar" [routerLink]="['/cadastr']" routerLinkActive="router-link-active"  ><span  class="cadastrar">CADASTRAR</span></button>
+  </section>
+  <br>
+  <section>
+    <span>Já tem uma conta? <a href="http://localhost:4200/login" class="link-login">Acesse agora</a></span>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </app-defaul-login-layout>
