@@ -12,9 +12,54 @@ form {
   margin: 0 auto;
 }
 
-.esqueceuSenha {
-  font-size: 16px;
+.example-form mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+}
+
+.termos {
+  margin-right: 80px;
+
+  .span-terms {
+    font-family: Montserrat, Roboto, monospace;
+  }
+  .link-terms {
+    text-decoration: none;
+    color: #007aff;
+  }
+}
+
+.btns {
+  align-items: start;
+  button {
+    border-radius: 8px;
+    width: 260px;
+    height: 40px;
+    padding: 0px 16px;
+    border: none;
+    cursor: pointer;
+
+  }
+  .btn-voltar {
+    background-color: black;
+    margin: 0px 18px 0px 0px;
+  }
+
+  .voltar {
+    color: #fff;
+  }
+
+  .btn-cadastrar {
+    background-color: #0000001f;
+    text-decoration: none;
+  }
+
+  .cadastrar {
+    color: #00000042;
+  }
+
+}
+.link-login {
   text-decoration: none;
-  color: #0038FF;
-  text-align: end;
+  color: #007aff;
 }

@@ -9,5 +9,4 @@ import { Component, Input, input } from '@angular/core';
 })
 export class DefaulLoginLayoutComponent {
   @Input() title: string = "";
-  @Input() BtnText: string = "";
 }
