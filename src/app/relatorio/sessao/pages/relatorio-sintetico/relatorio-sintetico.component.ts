@@ -42,15 +42,15 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class RelatorioSinteticoComponent  {
   mostrarConteudo: boolean = true;
-
   toggleConteudo() {
     this.mostrarConteudo = !this.mostrarConteudo;
   }
-  
+
   dataSource = new MatTableDataSource<DadosDocumento>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
-    // Conectar o paginator ao dataSource após a visualização ser inicializada
     this.dataSource.paginator = this.paginator;
   }
+
+  
 }
