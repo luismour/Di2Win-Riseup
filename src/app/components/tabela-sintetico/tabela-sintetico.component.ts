@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
@@ -17,6 +18,8 @@ import { FiltroData } from '../../filtroDate.service';
   imports: [
     CommonModule,
     MatTableModule,
+    MatPaginator,
+    MatPaginatorModule,
   ],
   templateUrl: './tabela-sintetico.component.html',
   styleUrls: ['./tabela-sintetico.component.css']
@@ -45,21 +48,21 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
     this.filtroSubscription = this.filtroService.filtro$.subscribe(filtro => {
       this.dataSource.filter = filtro.trim().toLowerCase();
     });
-  
-    this.filtroDateService.filtro$.subscribe(filtro => {
-  if (filtro && filtro.includes(' - ')) {
-    const [startDateStr, endDateStr] = filtro.split(' - ');
-    const startDate = this.convertStringToDate(startDateStr);
-    const endDate = this.convertStringToDate(endDateStr);
 
-    this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
-      return data.data >= startDate && data.data <= endDate;
-    };
-    this.dataSource.filter = filtro;
+    this.filtroDateService.filtro$.subscribe(filtro => {
+      if (filtro && filtro.includes(' - ')) {
+        const [startDateStr, endDateStr] = filtro.split(' - ');
+        const startDate = this.convertStringToDate(startDateStr);
+        const endDate = this.convertStringToDate(endDateStr);
+
+        this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
+          return data.data >= startDate && data.data <= endDate;
+        };
+        this.dataSource.filter = filtro;
+      }
+    });
   }
-});
-  }
-  
+
   convertStringToDate(dateStr: string): Date {
     const [day, month, year] = dateStr.split('/');
     return new Date(`${year}-${month}-${day}`);
@@ -67,6 +70,7 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnDestroy() {
@@ -74,4 +78,8 @@ export class TabelaSinteticoComponent implements OnInit, AfterViewInit, OnDestro
       this.filtroSubscription.unsubscribe();
     }
   }
+
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
 }
