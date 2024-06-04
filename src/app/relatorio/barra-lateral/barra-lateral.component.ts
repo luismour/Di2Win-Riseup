@@ -12,7 +12,12 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './barra-lateral.component.css'
 })
 export class BarraLateralComponent {
+  isExpanded = false;
 
+  toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+  }
+  
   isMenuVisible = false;
   textColor = '#F41D97';
   backgroundColor = 'transparent';

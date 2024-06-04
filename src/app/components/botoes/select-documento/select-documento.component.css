@@ -1,9 +1,22 @@
-.seletor-documento{
-padding: 18px;
-background-color: #f1f1f1;
-color: #868686;
-border-color: transparent;
-border-radius: 5px;
-font-size: 17px;
-width: 180px;
+.seletor-documento {
+    padding: 18px;
+    background-color: #f3f2f2;
+    color: #868686;
+    border-color: transparent;
+    border-radius: 5px;
+    font-size: 17px;
+    width: 180px;
+}
+.seletor-documento:hover {
+    background-color: #ebe9e9;
+}
+
+@media (max-width: 600px) {
+    .seletor-documento {
+        width: 150px;
+        padding: 18px 8px 18px 8px;
+        transform: scale(0.8);
+        margin-left: -10px;
+    }
+
 }
