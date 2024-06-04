@@ -1,4 +1,4 @@
-<div class="barra-lateral-box">
+<div class="barra-lateral-box" [ngClass]="{'expandir': isExpanded}"> 
   <ul class="menu-box">
     <li><a>Painel principal</a></li>
     <li><a>Enviar arquivo</a></li>
@@ -21,3 +21,4 @@
     <li><a>Sair</a></li>
   </ul>
 </div>
+<button class="toggle-button" (click)="toggleMenu()"><i class="material-icons">menu</i></button>

@@ -11,4 +11,21 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    transition: transform 0.3s ease;
+}
+.baixar:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .baixar {
+        width: 140px;
+        font-size: 13px;
+        gap: 2px;
+        padding: 10px 8px 10px 8px;
+    }
+    mat-icon{
+        font-size: 20px;
+    }
+
 }
