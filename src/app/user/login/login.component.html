@@ -1,7 +1,5 @@
-<app-defaul-login-layout
-  title="Bem-vindo de volta!"
->
-  <form class="login-form"  [formGroup]="loginForm">
+<app-defaul-login-layout title="Bem-vindo de volta!">
+  <form class="login-form" [formGroup]="loginForm">
     <app-primary-input
       formControlName="email"
       inputName="email"
@@ -11,22 +9,27 @@
     <app-primary-input
       formControlName="senha"
       inputName="senha"
-      type="senha"
+      type="password"
       label="Senha *"
     ></app-primary-input>
     <a class="esqueceuSenha" href="#">Esqueceu sua senha?</a>
   </form>
-    <div class="btn-wrapper">
-      <br>
-      <button>ENTRAR</button>
-      </div>
-      <div>
-        <br>
-      <p>Não tem conta? <a class="cliqueCadastrar" href="http://localhost:4200/cadastr">Clique aqui para se cadastrar.</a></p>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+  <div class="btn-wrapper">
+    <br />
+    <button>ENTRAR</button>
+  </div>
+  <div>
+    <br />
+    <p>
+      Não tem conta?
+      <a class="cliqueCadastrar" href="http://localhost:4200/cadastr"
+        >Clique aqui para se cadastrar.</a
+      >
+    </p>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 </app-defaul-login-layout>
