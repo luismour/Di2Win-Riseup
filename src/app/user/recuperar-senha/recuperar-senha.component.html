@@ -1,26 +1,8 @@
-<app-defaul-login-layout
-  title="Bem-vindo de volta!"
->
-  <form class="login-form"  [formGroup]="loginForm">
-    <app-primary-input
-      formControlName="email"
-      inputName="email"
-      type="email"
-      label="E-mail *"
-    ></app-primary-input>
-  </form>
-      <br>
-      <section class="btns">
-        <button class="btn-voltar" [routerLink]="['/login']" routerLinkActive="router-link-active"  ><span  class="voltar">VOLTAR</span></button>
-        <button class="btn-entrar" [routerLink]="['/cadastr']" routerLinkActive="router-link-active"  ><span  class="entrar">ENVIAR</span></button>
-      </section>
-      <br>
-      <section>
-        <span>Já tem uma conta? <a href="http://localhost:4200/login" class="link-login">Clique aqui.</a></span>
-      </section>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-</app-defaul-login-layout>
+<div class="login">
+    <div class="aside">
+      <app-defaul-login-layout ></app-defaul-login-layout>
+    </div>
+    <div class="form">
+      <app-form-senha></app-form-senha>
+    </div>
+  </div>

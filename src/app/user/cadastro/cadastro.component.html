@@ -1,72 +1,8 @@
-<app-defaul-login-layout title="Bem-vindo!">
-  <form class="login-form" [formGroup]="cadastroForm">
-    <app-primary-input
-      formControlName="name"
-      inputName="name"
-      type="text"
-      label="Nome *"
-    ></app-primary-input>
-    <app-primary-input
-      formControlName="email"
-      inputName="email"
-      type="email"
-      label="E-mail *"
-    ></app-primary-input>
-    <app-primary-input
-      formControlName="senha"
-      inputName="senha"
-      type="password"
-      label="Senha *"
-    ></app-primary-input>
-    <app-primary-input
-      formControlName="confirmaSenha"
-      inputName="confirmaSenha"
-      type="password"
-      label="Confirmar Senha *"
-    ></app-primary-input>
-  </form>
-  <br />
-  <section class="termos">
-    <mat-slide-toggle formName="acceptTerms"
-      ><span class="span-terms"
-        >Ao clicar em cadastrar, concordo com os
-        <a
-          href="https://www.di2win.com/termos-de-uso-do-portal-extraidados"
-          class="link-terms"
-          >Termos de uso</a
-        ></span
-      ></mat-slide-toggle
-    >
-  </section>
-  <br />
-  <section class="btns">
-    <button
-      class="btn-voltar"
-      [routerLink]="['/login']"
-      routerLinkActive="router-link-active"
-    >
-      <span class="voltar">VOLTAR</span>
-    </button>
-    <button
-      class="btn-cadastrar"
-      [routerLink]="['/cadastr']"
-      routerLinkActive="router-link-active"
-    >
-      <span class="cadastrar">CADASTRAR</span>
-    </button>
-  </section>
-  <br />
-  <section>
-    <span
-      >Já tem uma conta?
-      <a href="http://localhost:4200/login" class="link-login"
-        >Acesse agora</a
-      ></span
-    >
-  </section>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-</app-defaul-login-layout>
+<div class="login">
+  <div class="aside">
+    <app-defaul-login-layout ></app-defaul-login-layout>
+  </div>
+  <div class="form">
+    <app-form-cadastro></app-form-cadastro>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.aside {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    color: aliceblue;
+    padding: 20px;
+    justify-content: center;
+}
+
+.aside a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin: 10%;
+    width: 180px;
+}
+
+.aside h1 {
+    font-size: 6vh;
+    text-align: center;
+}
+
+.aside p {
+    font-size: 3vh;
+    text-align: left;
+    padding-left: 10%;
+}

@@ -7,12 +7,12 @@ import {
   FormBuilder,
   FormsModule,
 } from '@angular/forms';
-import { DefaulLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
-import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+import { DefaulLoginLayoutComponent } from '../../components/form/default-login-layout/default-login-layout.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterLink } from '@angular/router';
+import { FormCadastroComponent } from '../../components/form/form-cadastro/form-cadastro.component';
 
 @Component({
   selector: 'app-cadastro',
@@ -20,7 +20,7 @@ import { RouterLink } from '@angular/router';
   imports: [
     DefaulLoginLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent,
+    FormCadastroComponent,
     MatButtonModule,
     MatSlideToggleModule,
     FormsModule,
@@ -59,7 +59,7 @@ export class SlideToggleFormsExample {
     acceptTerms: ['', Validators.requiredTrue],
   });
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) { }
 
   alertFormValues(formGroup: FormGroup) {
     alert(JSON.stringify(formGroup.value, null, 2));

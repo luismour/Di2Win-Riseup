@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
-import { DefaulLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { DefaulLoginLayoutComponent } from '../../components/form/default-login-layout/default-login-layout.component';
 import { RouterLink } from '@angular/router';
-
-
+import { FormSenhaComponent } from '../../components/form/form-senha/form-senha.component';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +10,8 @@ import { RouterLink } from '@angular/router';
   imports: [
     DefaulLoginLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent,
     RouterLink,
+    FormSenhaComponent
   ],
   templateUrl: './recuperar-senha.component.html',
   styleUrl: './recuperar-senha.component.css'

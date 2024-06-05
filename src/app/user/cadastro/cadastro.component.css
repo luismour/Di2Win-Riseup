@@ -1,65 +1,34 @@
-form {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 34px;
-  box-shadow: none;
-}
-
-.login-form {
-
-  margin: 0 auto;
-}
-
-.example-form mat-slide-toggle {
-  margin: 8px 0;
-  display: block;
-}
-
-.termos {
-  margin-right: 80px;
-
-  .span-terms {
-    font-family: Montserrat, Roboto, monospace;
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    height: 90%;
+    width: 95%;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
-  .link-terms {
-    text-decoration: none;
-    color: #007aff;
+  .aside{
+    width: 45%;
+    height: 100%;
+    border-radius: 15px;
+    background-image: url("../../../assets/fundoLayout.svg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
   }
-}
-
-.btns {
-  align-items: start;
-  button {
-    border-radius: 8px;
-    width: 260px;
-    height: 40px;
-    padding: 0px 16px;
-    border: none;
-    cursor: pointer;
-
+  .form{
+    height: 100%;
+    width: 40%;
   }
-  .btn-voltar {
-    background-color: black;
-    margin: 0px 18px 0px 0px;
-  }
-
-  .voltar {
-    color: #fff;
-  }
-
-  .btn-cadastrar {
-    background-color: #0000001f;
-    text-decoration: none;
-  }
-
-  .cadastrar {
-    color: #00000042;
-  }
-
-}
-.link-login {
-  text-decoration: none;
-  color: #007aff;
-}
+  @media(max-width: 930px){
+    .aside{
+      display: none;
+    }
+    .form{
+      width: 90%;
+    }
+    }
+  
