@@ -1,35 +1,8 @@
-<app-defaul-login-layout title="Bem-vindo de volta!">
-  <form class="login-form" [formGroup]="loginForm">
-    <app-primary-input
-      formControlName="email"
-      inputName="email"
-      type="email"
-      label="E-mail *"
-    ></app-primary-input>
-    <app-primary-input
-      formControlName="senha"
-      inputName="senha"
-      type="password"
-      label="Senha *"
-    ></app-primary-input>
-    <a class="esqueceuSenha" href="#">Esqueceu sua senha?</a>
-  </form>
-  <div class="btn-wrapper">
-    <br />
-    <button>ENTRAR</button>
+<div class="login">
+  <div class="aside">
+    <app-defaul-login-layout ></app-defaul-login-layout>
   </div>
-  <div>
-    <br />
-    <p>
-      Não tem conta?
-      <a class="cliqueCadastrar" href="http://localhost:4200/cadastr"
-        >Clique aqui para se cadastrar.</a
-      >
-    </p>
+  <div class="form">
+    <app-form-login></app-form-login>
   </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-</app-defaul-login-layout>
+</div>
