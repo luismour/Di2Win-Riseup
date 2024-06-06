@@ -1,12 +1,13 @@
 <div>
-   <mat-form-field style="width: 91%;">
+  <input type="button" value="x" class="refresh" (click)="clearDates()">
+   <mat-form-field style="width: 91%;" color="accent">
     <mat-label>Buscar por data</mat-label>
-    <mat-date-range-input [rangePicker]="picker">
+    <mat-date-range-input [rangePicker]="picker" >
       <input matStartDate placeholder="data inicial" (dateChange)="onStartDateChange($event.value)">
       <input matEndDate placeholder="data final" (dateChange)="onEndDateChange($event.value)">
     </mat-date-range-input>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-date-range-picker #picker ></mat-date-range-picker>
 </mat-form-field>
   
 </div>
