@@ -73,6 +73,9 @@ src/
 - [@eumatheuslucas](https://github.com/eumatheuslucas) - Matheus Lucas França dos Santos
 - [@pedrohhenriqueas](https://github.com/pedrohhenriqueas) - Pedro Henrique de Araujo Santos
 
+## 📱 Figma
+[Link do protótipo no figma](https://www.figma.com/design/5hSrUGsgZG2ozluXMzbUiE/Di2win?node-id=0-1&t=QXkmVSp8T8AmkV08-1)
+
 ## 👏 Agradecimentos
 
 Agradecemos a todos que contribuíram direta ou indiretamente para a realização deste projeto, especialmente a [Di2Win](https://www.linkedin.com/company/di2win/).
