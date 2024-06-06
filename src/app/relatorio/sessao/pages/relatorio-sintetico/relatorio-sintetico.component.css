@@ -1,7 +1,6 @@
 .relatorio-box {
   margin-top: 50px;
   display: block;
-  overflow-y: scroll;
 }
 .relatorio-box hr {
   border-color: #f41d97;

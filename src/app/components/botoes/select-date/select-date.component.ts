@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { FiltroData } from '../../../filtroDate.service';
+import { Router } from '@angular/router';
 
 export const MY_FORMATS = {
   parse: {
@@ -38,12 +39,14 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ]
 })
-export class SelectDateComponent {
-
+export class SelectDateComponent  {
   startDate: Date | null = null;
   endDate: Date | null = null;
 
-  constructor(private filtroData: FiltroData) {}
+  constructor(private filtroData: FiltroData, private router: Router) {
+    
+  }
+
 
   onStartDateChange(date: Date | null) {
     this.startDate = date;
@@ -68,5 +71,13 @@ export class SelectDateComponent {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
+
+  clearDates() {
+    this.router.navigate([this.router.url])
+      .then(() => {
+        window.location.reload();
+      });
+  }
+  
 }
 

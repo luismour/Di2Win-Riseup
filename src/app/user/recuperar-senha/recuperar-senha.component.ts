@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { FormSenhaComponent } from '../../components/form/form-senha/form-senha.component';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-recuperar-senha',
   standalone: true,
   imports: [
     DefaulLoginLayoutComponent,
