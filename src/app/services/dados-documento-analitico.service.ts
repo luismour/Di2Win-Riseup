@@ -1,7 +1,7 @@
 // src/app/dados-documento.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DadosDocumento } from './dados-documento-analitico.model'; // Certifique-se de que a interface está em um arquivo separado
+import { DadosDocumento } from '../dados-documento-analitico.model'; // Certifique-se de que a interface está em um arquivo separado
 
 @Injectable({
   providedIn: 'root',

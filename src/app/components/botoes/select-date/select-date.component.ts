@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { FiltroData } from '../../../filtroDate.service';
+import { FiltroData } from '../../../services/filtroDate.service';
 import { Router } from '@angular/router';
 
 export const MY_FORMATS = {
