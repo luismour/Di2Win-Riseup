@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiltroService } from '../../../filtro.service';
+import { FiltroService } from '../../../services/filtro.service';
 
 @Component({
   selector: 'app-select-documento',

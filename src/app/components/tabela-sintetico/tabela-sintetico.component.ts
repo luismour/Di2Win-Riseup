@@ -6,11 +6,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { DadosDocumentoService } from '../../dados-documento-sintetico.service';
+import { DadosDocumentoService } from '../../services/dados-documento-sintetico.service';
 import { DadosDocumento } from '../../dados-documento-sintetico.model';
-import { FiltroService } from '../../filtro.service';
+import { FiltroService } from '../../services/filtro.service';
 import { Subscription } from 'rxjs';
-import { FiltroData } from '../../filtroDate.service';
+import { FiltroData } from '../../services/filtroDate.service';
 
 @Component({
   selector: 'app-tabela-sintetico',

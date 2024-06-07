@@ -1,8 +1,8 @@
 // src/app/dados-documento.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DadosDocumento } from './dados-documento-sintetico.model';
-import { Usuario } from './usuario.model';
+import { DadosDocumento } from '../dados-documento-sintetico.model';
+import { Usuario } from '../usuario.model';
 
 @Injectable({
   providedIn: 'root',

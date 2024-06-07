@@ -5,11 +5,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { DadosDocumentoService } from '../../dados-documento-analitico.service';
+import { DadosDocumentoService } from '../../services/dados-documento-analitico.service';
 import { DadosDocumento } from '../../dados-documento-analitico.model';
-import { FiltroService } from '../../filtro.service';
+import { FiltroService } from '../../services/filtro.service';
 import { Subscription } from 'rxjs';
-import { FiltroData } from '../../filtroDate.service';
+import { FiltroData } from '../../services/filtroDate.service';
 
 
 @Component({
