@@ -1,13 +1,12 @@
 // src/app/baixar-botao-sintetico/baixar-botao-sintetico.component.ts
 import { Component } from '@angular/core';
-import { DadosDocumentoService } from '../../../dados-documento-sintetico.service';
-import { DadosDocumento } from '../../../dados-documento-sintetico.model';
+import { DadosDocumentoService } from '../../../services/dados-documento-sintetico.service';
+import { DadosDocumento } from '../../../services/dados-documento-sintetico.model';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-baixar-botao-sintetico',
@@ -20,10 +19,9 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
   ],
   templateUrl: './baixar-botao-sintetico.component.html',
-  styleUrls: ['./baixar-botao-sintetico.component.css']
+  styleUrls: ['./baixar-botao-sintetico.component.css'],
 })
 export class BaixarBotaoSinteticoComponent {
-
   constructor(private dadosService: DadosDocumentoService) {}
 
   baixarDados() {
@@ -38,7 +36,12 @@ export class BaixarBotaoSinteticoComponent {
   }
 
   converterParaCSV(dados: DadosDocumento[]): string {
-    const cabecalho = ['Usuario', 'Data', 'Processadas na data escolhida', 'Total processado'];
+    const cabecalho = [
+      'Usuario',
+      'Data',
+      'Processadas na data escolhida',
+      'Total processado',
+    ];
     const linhas = dados.map((d) => [
       d.usuario,
       d.data.toDateString(),

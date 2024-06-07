@@ -1,17 +1,16 @@
 .sessao {
-    display: flex;
-    gap: 5%;
-    padding-top: 60px;
+  display: flex;
+  gap: 5%;
+  padding-top: 60px;
+  height: 110%;
 }
 
 .router {
-    width: 70%;
+  width: 70%;
 }
 
 @media (max-width: 930px) {
-    .router {
-        width: 90%;
-    }
-    
+  .router {
+    width: 90%;
+  }
 }
-

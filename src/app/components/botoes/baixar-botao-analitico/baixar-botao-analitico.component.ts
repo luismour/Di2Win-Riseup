@@ -7,9 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 
-import { DadosDocumentoService } from '../../../dados-documento-analitico.service';
-import { DadosDocumento } from '../../../dados-documento-analitico.model';
-
+import { DadosDocumentoService } from '../../../services/dados-documento-analitico.service';
+import { DadosDocumento } from '../../../services/dados-documento-analitico.model';
 
 @Component({
   selector: 'app-baixar-botao-analitico',
@@ -22,7 +21,7 @@ import { DadosDocumento } from '../../../dados-documento-analitico.model';
     MatIconModule,
   ],
   templateUrl: './baixar-botao-analitico.component.html',
-  styleUrl: './baixar-botao-analitico.component.css'
+  styleUrl: './baixar-botao-analitico.component.css',
 })
 export class BaixarBotaoAnaliticoComponent {
   constructor(private dadosService: DadosDocumentoService) {}

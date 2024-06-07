@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { DadosDocumento } from './dados-documento-sintetico.model';
-import { Usuario } from './usuario.model';
+import { Usuario } from '../usuario.model';
 
 @Injectable({
   providedIn: 'root',
@@ -315,7 +315,7 @@ export class DadosDocumentoService {
     const usuarios: Usuario[] = [];
 
     for (const dado of dados) {
-      if (!usuarios.some(u => u.nome === dado.usuario)) {
+      if (!usuarios.some((u) => u.nome === dado.usuario)) {
         usuarios.push({ id: usuarios.length.toString(), nome: dado.usuario });
       }
     }

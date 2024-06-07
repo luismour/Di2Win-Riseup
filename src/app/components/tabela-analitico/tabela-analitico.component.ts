@@ -1,30 +1,32 @@
-import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  OnDestroy,
+} from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { DadosDocumentoService } from '../../dados-documento-analitico.service';
-import { DadosDocumento } from '../../dados-documento-analitico.model';
-import { FiltroService } from '../../filtro.service';
+import { DadosDocumentoService } from '../../services/dados-documento-analitico.service';
+import { DadosDocumento } from '../../services/dados-documento-analitico.model';
+import { FiltroService } from '../../services/filtro.service';
 import { Subscription } from 'rxjs';
-import { FiltroData } from '../../filtroDate.service';
-
+import { FiltroData } from '../../services/filtroDate.service';
 
 @Component({
   selector: 'app-tabela-analitico',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatPaginator,
-    MatPaginatorModule,
-  ],
+  imports: [CommonModule, MatTableModule, MatPaginator, MatPaginatorModule],
   templateUrl: './tabela-analitico.component.html',
-  styleUrl: './tabela-analitico.component.css'
+  styleUrl: './tabela-analitico.component.css',
 })
-export class TabelaAnaliticoComponent implements OnInit, AfterViewInit, OnDestroy{
+export class TabelaAnaliticoComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   displayedColumns: string[] = ['tipoDocumento', 'data', 'quantidadePaginas'];
   dataSource = new MatTableDataSource<DadosDocumento>([]);
 
@@ -32,26 +34,36 @@ export class TabelaAnaliticoComponent implements OnInit, AfterViewInit, OnDestro
 
   private filtroSubscription: Subscription | null = null;
 
-  constructor(private dadosService: DadosDocumentoService, private filtroService: FiltroService, private filtroDateService: FiltroData) {
+  constructor(
+    private dadosService: DadosDocumentoService,
+    private filtroService: FiltroService,
+    private filtroDateService: FiltroData
+  ) {
     this.dataSource = new MatTableDataSource<DadosDocumento>([]);
-    this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
+    this.dataSource.filterPredicate = (
+      data: DadosDocumento,
+      filter: string
+    ) => {
       return data.tipoDocumento.toLowerCase().includes(filter.toLowerCase());
     };
   }
 
   ngOnInit(): void {
     this.dataSource.data = this.dadosService.getDados();
-    this.filtroSubscription = this.filtroService.filtro$.subscribe(filtro => {
+    this.filtroSubscription = this.filtroService.filtro$.subscribe((filtro) => {
       this.dataSource.filter = filtro.trim().toLowerCase();
     });
 
-    this.filtroDateService.filtro$.subscribe(filtro => {
+    this.filtroDateService.filtro$.subscribe((filtro) => {
       if (filtro && filtro.includes(' - ')) {
         const [startDateStr, endDateStr] = filtro.split(' - ');
         const startDate = this.convertStringToDate(startDateStr);
         const endDate = this.convertStringToDate(endDateStr);
 
-        this.dataSource.filterPredicate = (data: DadosDocumento, filter: string) => {
+        this.dataSource.filterPredicate = (
+          data: DadosDocumento,
+          filter: string
+        ) => {
           return data.data >= startDate && data.data <= endDate;
         };
         this.dataSource.filter = filtro;
@@ -74,7 +86,6 @@ export class TabelaAnaliticoComponent implements OnInit, AfterViewInit, OnDestro
       this.filtroSubscription.unsubscribe();
     }
   }
-
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 }
