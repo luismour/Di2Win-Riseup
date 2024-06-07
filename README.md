@@ -74,7 +74,8 @@ src/
 - [@pedrohhenriqueas](https://github.com/pedrohhenriqueas) - Pedro Henrique de Araujo Santos
 
 ## 📱 Figma
-<a href="https://www.figma.com/design/5hSrUGsgZG2ozluXMzbUiE/Di2win?node-id=0-1&t=QXkmVSp8T8AmkV08-1" target="_blank">Hello, world!</a>
+
+[Figma](https://www.figma.com/design/5hSrUGsgZG2ozluXMzbUiE/Di2win?node-id=0-1&t=QXkmVSp8T8AmkV08-1){:target="_blank"}
 
 ## 👏 Agradecimentos
 
