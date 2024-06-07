@@ -75,7 +75,7 @@ src/
 
 ## 📱 Figma
 
-[Figma](https://www.figma.com/design/5hSrUGsgZG2ozluXMzbUiE/Di2win?node-id=0-1&t=QXkmVSp8T8AmkV08-1) target="_blank"
+[Protótipo Figma](https://www.figma.com/design/5hSrUGsgZG2ozluXMzbUiE/Di2win?node-id=0-1&t=QXkmVSp8T8AmkV08-1)
 
 ## 👏 Agradecimentos
 
